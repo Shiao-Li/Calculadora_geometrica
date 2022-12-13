@@ -15,5 +15,10 @@ public class circulo {
         }
     }
 
+    public void areaCirculo(){
+
+    }
+
+
 
 }
