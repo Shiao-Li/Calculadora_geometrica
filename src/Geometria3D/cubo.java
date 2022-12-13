@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class cubo {
     private Scanner sc = new Scanner(System.in);
-    private double lado, areaSuperficial, volumen;
+    private double lado;
+    private double volumen;
+    private double areaSuperficial;
     public void capturarDatos(){
         try{
             System.out.print("Ingrese el valor del lado: ");
@@ -16,7 +18,7 @@ public class cubo {
     }
 
     public void calcularAreaSuperficial(){
-        areaSuperficial = 6 * Math.pow(lado,2);
+        areaSuperficial = 6 * Math.pow(lado, 2);
         System.out.println("El area superficial del cubo es: " + areaSuperficial);
     }
 
