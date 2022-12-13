@@ -14,6 +14,7 @@ public class hexagono {
             this.apotema = sc.nextFloat();
         } catch (InputMismatchException error) {
             System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+
         }
     }
     public void areaHexagonoo(){
