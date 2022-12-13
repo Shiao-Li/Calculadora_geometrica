@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class circulo {
-    private double lado, radio, base, altura;
+    private double radio;
     private Scanner sc = new Scanner(System.in);
     public void capturarDatos(){
         try{
