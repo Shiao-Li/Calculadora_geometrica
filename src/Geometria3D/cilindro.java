@@ -8,26 +8,27 @@ public class cilindro {
     private double altura;
     private double volumen;
     private double areaSuperficial;
+    //Constructores
 
-    public void capturarDatos(){
-        try{
-            System.out.print("Ingrese el valor del radio: ");
-            this.radio = sc.nextFloat();
-            System.out.print("Ingrese el valor de la altura: ");
-            this.altura = sc.nextFloat();
-        } catch (InputMismatchException error) {
-            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
-        }
+    public cilindro(double radio, double altura) {
+        this.radio = radio;
+        this.altura = altura;
     }
 
+    //Metodos
     public void calcularAreaSuperficial(){
-        areaSuperficial = 2 * Math.PI * radio * (altura + radio);
-        System.out.println("El area superficial del cubo es: " + areaSuperficial);
+        areaSuperficial = 2 * Math.PI * this.radio * (this.altura + this.radio);
     }
 
     public void calcularVolumen(){
-        volumen = Math.PI * Math.pow(radio, 2) * altura;
-        System.out.println("El volumen del cubo es: " + volumen);
+        volumen = Math.PI * Math.pow(this.radio, 2) * this.altura;
     }
 
+    public double getVolumen() {
+        return volumen;
+    }
+
+    public double getAreaSuperficial() {
+        return areaSuperficial;
+    }
 }
