@@ -1,31 +1,30 @@
 package Geometria3D;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 public class cono {
-    private Scanner sc = new Scanner(System.in);
     private double radio;
     private double altura;
     private double generatriz;
     private double areaSuperficial;
     private double volumen;
-    public void capturarDatos(){
-        try{
-            System.out.print("Ingrese el valor del radio: ");
-            this.radio = sc.nextFloat();
-            System.out.print("Ingrese el valor de la altura: ");
-            this.altura = sc.nextFloat();
-        } catch (InputMismatchException error) {
-            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
-        }
+    //Constructor
+    public cono(double radio, double altura) {
+        this.radio = radio;
+        this.altura = altura;
     }
+    //Metodos
     public void calcularAreaSuperficial(){
-        generatriz = Math.sqrt(Math.pow(altura,2) + Math.pow(radio,2));
-        areaSuperficial = Math.PI * radio * (radio + generatriz);
-        System.out.println("El area superficial del cono es: " + areaSuperficial);
+        generatriz = Math.sqrt(Math.pow(this.altura,2) + Math.pow(this.radio,2));
+        areaSuperficial = Math.PI * this.radio * (this.radio + generatriz);
     }
 
     public void calcularVolumen(){
-        volumen = (Math.PI * Math.pow(radio,2) * altura)/3;
-        System.out.println("El volumen del cono es: " + volumen);
+        volumen = (Math.PI * Math.pow(this.radio,2) * this.altura)/3;
+    }
+
+    public double getAreaSuperficial() {
+        return areaSuperficial;
+    }
+
+    public double getVolumen() {
+        return volumen;
     }
 }

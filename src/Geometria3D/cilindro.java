@@ -1,20 +1,15 @@
 package Geometria3D;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 public class cilindro {
-    private Scanner sc = new Scanner(System.in);
+
     private double radio;
     private double altura;
     private double volumen;
     private double areaSuperficial;
-    //Constructores
-
+    //Constructor
     public cilindro(double radio, double altura) {
         this.radio = radio;
         this.altura = altura;
     }
-
     //Metodos
     public void calcularAreaSuperficial(){
         areaSuperficial = 2 * Math.PI * this.radio * (this.altura + this.radio);
