@@ -21,7 +21,6 @@ public class principal {
         figuraCilindro.calcularVolumen();
         System.out.println("El volumen del cilindro es: " + figuraCilindro.getVolumen());
 
-
     }
 }
 
