@@ -2,6 +2,7 @@ import Geometria3D.*;
 import Geometria2D.*;
 
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class principal {
@@ -101,7 +102,6 @@ public class principal {
                         case "K":
                             opcionSalir = false;
                             break;
-
                         default:
                             System.out.println("\nOPCION INGRESADA NO VALIDA");
                             break;
@@ -163,11 +163,25 @@ public class principal {
                             imprimirResultados(figuraPiramide.getAreaSuperficial(), figuraPiramide.getVolumen());
                             break;
                         case "H":
-
+                            capturarDatos2("lado", "altura");
+                            prismaPentagonal figuraPrisma = new prismaPentagonal(dato1, dato2);
+                            figuraPrisma.calcularAreaSuperficial();
+                            figuraPrisma.calcularVolumen();
+                            imprimirResultados(figuraPrisma.getAreaSuperficial(), figuraPrisma.getVolumen());
                             break;
                         case "I":
+                            capturarDatos1("lado");
+                            tetraedroRegular figuraTetraedro = new tetraedroRegular(dato1);
+                            figuraTetraedro.calcularAreaSuperficial();
+                            figuraTetraedro.calcularVolumen();
+                            imprimirResultados(figuraPrisma.getAreaSuperficial(), figuraPrisma.getVolumen());
                             break;
                         case "J":
+                            capturarDatos3("radio menor", "radio mayor", "altura");
+                            troncoCono figuraTronco = new troncoCono(dato1, dato2, dato3);
+                            figuraTronco.calcularAreaSuperficial();
+                            figuraTronco.calcularVolumen();
+                            imprimirResultados(figuraTronco.getAreaSuperficial(), figuraTronco.getVolumen());
                             break;
                         case "K":
                             opcionSalir = false;
@@ -181,7 +195,6 @@ public class principal {
                     opcionSalir = false;
                     break;
             }
-
         } while (opcionSalir);
     }
     /*
@@ -192,44 +205,64 @@ public class principal {
         }
      */
     private static void capturarDatos1(String palabra1){
-        System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
-        dato1 = sc.nextDouble();
+        try{
+            System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
+            dato1 = sc.nextDouble();
+        } catch (InputMismatchException error) {
+            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+        }
     }
     private static void capturarDatos2(String palabra1, String palabra2){
-        System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
-        dato1 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
-        dato2 = sc.nextDouble();
+        try {
+            System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
+            dato1 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
+            dato2 = sc.nextDouble();
+        } catch (InputMismatchException error) {
+            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+        }
     }
     private static void capturarDatos3(String palabra1, String palabra2, String palabra3){
-        System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
-        dato1 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
-        dato2 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
-        dato3 = sc.nextDouble();
+        try {
+            System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
+            dato1 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
+            dato2 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
+            dato3 = sc.nextDouble();
+        } catch (InputMismatchException error) {
+            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+        }
     }
     private static void capturarDatos4(String palabra1, String palabra2, String palabra3, String palabra4){
-        System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
-        dato1 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
-        dato2 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
-        dato3 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra4 + "): ");
-        dato3 = sc.nextDouble();
+        try {
+            System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
+            dato1 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
+            dato2 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
+            dato3 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra4 + "): ");
+            dato3 = sc.nextDouble();
+        } catch (InputMismatchException error) {
+            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+        }
     }
     private static void capturarDatos5(String palabra1, String palabra2, String palabra3, String palabra4, String palabra5){
-        System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
-        dato1 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
-        dato2 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
-        dato3 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra4 + "): ");
-        dato4 = sc.nextDouble();
-        System.out.print("Ingrese el valor del dato (" + palabra5 + "): ");
-        dato5 = sc.nextDouble();
+        try {
+            System.out.print("Ingrese el valor del dato (" + palabra1 + "): ");
+            dato1 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra2 + "): ");
+            dato2 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra3 + "): ");
+            dato3 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra4 + "): ");
+            dato4 = sc.nextDouble();
+            System.out.print("Ingrese el valor del dato (" + palabra5 + "): ");
+            dato5 = sc.nextDouble();
+        } catch (InputMismatchException error) {
+            System.err.printf("%nExcepcion (Ingreso incorrecto de datos): %s%n", error);
+        }
     }
     private static void imprimirResultados(double valor1, double valor2){
         System.out.println("\nResultados:");
@@ -277,15 +310,3 @@ public class principal {
         System.out.println("K. Salir");
     }
 }
-
-        /*
-        System.out.print("Ingrese el valor del radio: ");
-        dato1 = sc.nextDouble();
-        System.out.print("Ingrese el valor de la altura: ");
-        dato2 = sc.nextDouble();
-        cono figuraCono = new cono(dato1, dato2);
-        //Impresion de datos
-        figuraCono.calcularAreaSuperficial();
-        System.out.println("El area superficial del cono es: " + df.format(figuraCono.getAreaSuperficial()));
-        figuraCono.calcularVolumen();
-        System.out.println("El volumen del cono es: " + df.format(figuraCono.getVolumen()));*/
