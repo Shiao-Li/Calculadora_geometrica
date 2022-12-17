@@ -101,6 +101,7 @@ public class principal {
                         case "K":
                             opcionSalir = false;
                             break;
+
                         default:
                             System.out.println("\nOPCION INGRESADA NO VALIDA");
                             break;
