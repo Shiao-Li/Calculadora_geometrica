@@ -139,6 +139,7 @@ public class principal {
         figuraTriangulo.perimetroTriangulo();
         System.out.println("El perimetro del trapecio es: " + df.format(figuraTriangulo.getPerimetroTriangulo()));*/
 
+
     }
 }
 
