@@ -29,6 +29,7 @@ public class principal {
                     System.out.print("Elija una opción: ");
                     opcionMenu = sc.next().toUpperCase();
                     opcionSalir = true;
+
                     switch (opcionMenu) {
                         case "A":
                             capturarDatos1("radio");
