@@ -1,27 +1,19 @@
 package Geometria2D;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-public class cuadrado {
-    private double lado, areaCuadrado, perimetroCuadrado;
+public class cuadrado extends Figuras2D {
+    private double lado;
 
     public cuadrado(double lado) {
         this.lado = lado;
+        calcularArea();
+        calcularPerimetro();
+    }
+    @Override
+    protected void calcularArea(){
+        this.area = Math.pow(this.lado, 2);
+    }
+    protected void calcularPerimetro(){
+        this.perimetro = 4 * this.lado;
     }
 
-    public void areaCuadrado(){
-        areaCuadrado = Math.pow(this.lado, 2);
-    }
-    public void perimetroCuadrado(){
-        perimetroCuadrado = 4 * this.lado;
-    }
-
-    public double getAreaCuadrado() {
-        return areaCuadrado;
-    }
-
-    public double getPerimetroCuadrado() {
-        return perimetroCuadrado;
-    }
 }

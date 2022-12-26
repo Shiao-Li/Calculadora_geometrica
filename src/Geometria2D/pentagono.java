@@ -1,24 +1,24 @@
 package Geometria2D;
 
-public class pentagono {
-    private double lado, apotema, areaPentagono, perimetroPentagono;
+public class pentagono extends Figuras2D {
+    private double lado, apotema;
 
     public pentagono(double lado, double apotema) {
         this.lado = lado;
         this.apotema = apotema;
-    }
-    public void areaPentagono(){
-        areaPentagono= (5*this.lado*this.apotema)/2;
-    }
-    public void perimetroPentagono(){
-        perimetroPentagono = (5*this.lado);
+        calcularArea();
+        calcularPerimetro();
     }
 
-    public double getAreaPentagono() {
-        return areaPentagono;
+    @Override
+    protected void calcularArea() {
+        this.area = (5 * this.lado * this.apotema) / 2;
     }
 
-    public double getPerimetroPentagono() {
-        return perimetroPentagono;
+    @Override
+    protected void calcularPerimetro() {
+        this.perimetro = (5 * this.lado);
     }
+
+
 }

@@ -1,25 +1,24 @@
 package Geometria2D;
 
-public class octagono {
-    private double lado, apotema, areaOctagono, perimetroOctagono;
+public class octagono extends Figuras2D {
+    private double lado, apotema;
 
     public octagono(double lado, double apotema) {
         this.lado = lado;
         this.apotema = apotema;
+        calcularArea();
+        calcularPerimetro();
     }
 
-    public void areaOctagono(){
-        areaOctagono= 4*this.apotema*this.lado;
-    }
-    public void perimetroOctagono(){
-        perimetroOctagono = (8*this.lado);
+    @Override
+    protected void calcularArea() {
+        this.area = 4 * this.apotema * this.lado;
     }
 
-    public double getAreaOctagono() {
-        return areaOctagono;
+    @Override
+    protected void calcularPerimetro() {
+        this.perimetro = (8 * this.lado);
     }
 
-    public double getPerimetroOctagono() {
-        return perimetroOctagono;
-    }
+
 }

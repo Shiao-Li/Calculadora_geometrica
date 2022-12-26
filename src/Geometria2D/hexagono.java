@@ -1,28 +1,23 @@
 package Geometria2D;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-public class hexagono {
-    private double lado, apotema, areaHexagono, perimetroHexagono;
+public class hexagono extends Figuras2D {
+    private double lado, apotema;
 
     public hexagono(double lado, double apotema) {
         this.lado = lado;
         this.apotema = apotema;
+        calcularArea();
+        calcularPerimetro();
     }
 
-    public void areaHexagonoo(){
-        areaHexagono= (3*this.apotema*this.lado);
-    }
-    public void perimetroHexagono(){
-        perimetroHexagono = (6*this.lado);
+    @Override
+    protected void calcularArea() {
+        this.area = (3 * this.apotema * this.lado);
     }
 
-    public double getAreaHexagono() {
-        return areaHexagono;
+    @Override
+    protected void calcularPerimetro() {
+        this.perimetro = (6 * this.lado);
     }
 
-    public double getPerimetroHexagono() {
-        return perimetroHexagono;
-    }
 }
